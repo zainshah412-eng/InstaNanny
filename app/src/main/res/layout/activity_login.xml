@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.LoginActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="307dp"
+                android:layout_height="82dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:src="@drawable/insta_nannies_logo">
+
+            </ImageView>
+
+
+            <com.instantnannies.user.CustomFont.CustomBoldTextView
+                android:layout_width="wrap_content"
+                android:text="@string/sign_in_text"
+                android:textSize="18sp"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/dim_black"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomBoldTextView>
+
+            <com.instantnannies.user.CustomFont.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:textSize="16sp"
+                android:text="@string/enter_credentials"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomTextView>
+
+
+            <com.instantnannies.user.CustomFont.CustomEditText
+                android:layout_width="match_parent"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="@string/enter_email"
+                android:id="@+id/et_email"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@id/et_password"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomEditText>
+
+            <com.instantnannies.user.CustomFont.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="@string/enter_password"
+                android:id="@+id/et_password"
+                android:inputType="textPassword"
+                android:imeOptions="actionDone"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomEditText>
+
+            <com.instantnannies.user.CustomFont.CustomButton
+                android:layout_width="match_parent"
+                android:layout_marginTop="45dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/sign_in"
+                android:textColor="@color/white"
+                android:id="@+id/btn_sign_in"
+                android:background="@drawable/rounded_button_bg"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomButton>
+
+            <com.instantnannies.user.CustomFont.CustomButton
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/register"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/btn_register"
+                android:background="@drawable/round_stroke_button_bg"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomButton>
+
+            <com.instantnannies.user.CustomFont.CustomTextView
+                android:visibility="visible"
+                android:id="@+id/forgetPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/i_forgot_my_password"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

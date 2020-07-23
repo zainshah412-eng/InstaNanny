@@ -1,0 +1,288 @@
+<!DOCTYPE
+    resources
+    [<!ENTITY appName "Instant Nannies">
+        <!ENTITY appNameCaps "NANNIES">
+        <!ENTITY Provider "Nanny">
+        <!ENTITY provider "nanny">
+        <!ENTITY Service "nanny">
+        <!ENTITY service "nanny">]
+    >
+<resources>
+
+    <string name="app_name">Insta Nannies</string>
+
+    <!--Keys-->
+    <string name="google_maps_key">AIzaSyCc_N1Z1xiwO_CCoGRQ1V1C5BStD6YfFoo</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <!--Activity Register-->
+    <string name="welcome_text">Welcome to Insta Nannies</string>
+    <string name="enter_your_info">Enter your Information</string>
+    <string name="enter_name">Enter your Name</string>
+    <string name="enter_email">Enter your Email</string>
+    <string name="enter_mobile_no">Enter your Mobile Number</string>
+    <string name="enter_password">Enter your Password</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="mobile_no" translatable="false">9876543210</string>
+    <string name="password_txt" translatable="false">******</string>
+    <string name="sample_mail_id" translatable="false">name@examplecom</string>
+    <string name="reason_to_cancel">Reason for cancellation</string>
+    <string name="cencel_request">Are you sure you want to cancel the &service;?</string>
+    <string name="close">Close</string>
+    <string name="time_taken">Time Taken</string>
+    <!--Status -->
+    <string name="arrived">&Provider; has arrived at your location</string>
+    <string name="picked_up">Your Requested service has been started.</string>
+    <string name="dropped">&Service; has completed</string>
+    <!--Login Activity-->
+    <string name="sign_in_text">Sign in to Insta Nannies</string>
+    <string name="enter_credentials">Enter your credentials to continue</string>
+    <string name="sign_in">Sign in</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Nannies Booking Fragment-->
+    <string name="confirm_location">Confirm Request</string>
+    <string name="slot_alert_title">Change Your Time Slot</string>
+    <string name="slot_alert_message">You have to book your slot after 4 hours! Please Change your time slot!</string>
+    <string name="slot_alert1_message">You have to book your slot after current time! Please Change your time slot!</string>
+
+
+    <!--Address Search Activity-->
+    <string name="where_you_want_services">Where you want Services?</string>
+
+    <!--Navigation Drawer-->
+    <string name="your_bookings">Your Appointments</string>
+    <string name="help">Help</string>
+    <string name="settings">Settings</string>
+    <string name="add_card">Add Card</string>
+    <string name="logout">Logout</string>
+
+
+    <!--Verification Code-->
+    <string name="verification_code_header">We have send a code on your number</string>
+    <string name="enter_code">Enter your verification code</string>
+    <string name="code">Code</string>
+    <string name="verify_code">Verify Code</string>
+    <string name="enter_otp">Enter OTP</string>
+
+    <!--Error Message-->
+    <string name="please_wait">Please wait...</string>
+
+    <!-- Error Messages-->
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="something_went_wrong_net">Something went wrong, Please check internet connection</string>
+    <string name="oops_connect_your_internet">Oops ! Connect your Internet</string>
+    <string name="server_down">Unable to reach server</string>
+    <string name="please_try_again">Please try again</string>
+    <string name="email_validation">Enter your email ID</string>
+    <string name="not_valid_email">Not a valid email ID</string>
+    <string name="password_validation">Password could not be left empty</string>
+    <string name="first_name_empty">First name required</string>
+    <string name="last_name_empty">Last name required</string>
+    <string name="mobile_number_empty">Mobile number required</string>
+    <string name="mobile_number_validation">Mobile number must have numbers between 10 to 20 digits</string>
+    <string name="your_cards">Your Cards</string>
+    <string name="enter_details_register">Enter your details to register</string>
+    <string name="fb_cancel">Facebook login cancelled</string>
+    <string name="fb_error">Facebook login failed</string>
+    <string name="google_login">Google login failed</string>
+    <string name="social_cancel">Social login cancelled</string>
+    <string name="registration_failed">Registration cancelled</string>
+    <string name="first_name_no_number">First name do not accept numbers</string>
+    <string name="last_name_no_number">Last name do not accept numbers</string>
+    <string name="password_validation1">Password must contains minimum 8 characters, maximum 16 characters</string>
+    <string name="password_validation2">Password must contain atleast 1 Uppercase, 1 Lowercase, 1 Number and 1 Special Character</string>
+    <string name="email_exist">The email has already been taken</string>
+    <string name="password_size">Password size must be atleast 6</string>
+    <string name="no_service">Service not available at this location.</string>
+
+    <!--True or False -->
+    <string name="True" translatable="false">true</string>
+    <string name="False" translatable="false">false</string>
+
+
+    <!--Show Dailog-->
+    <string name="connect_to_network">Connect to network or quit</string>
+    <string name="change_pwd_dialog">Your password has updated successfully. Please login with your new password.</string>
+    <string name="logout_alert">Are you sure want to logout?</string>
+    <string name="connect_to_wifi">Connect to WIFI</string>
+    <string name="quit">Quit</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="done">Done</string>
+    <!--Navigation Drawer -->
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Edit Profile-->
+    <string name="profile_info">Information related to your Profile</string>
+    <string name="update_your_info">Update your Profile</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="update_success">Profile Updated</string>
+    <string name="valid_image">No image found</string>
+    <string name="change_password">Looking to change password?</string>
+    <!--Add Card-->
+    <string name="add_card_for_payments">Add Card for Payments</string>
+    <string name="enter_card_details">Card details not valid</string>
+
+    <!--Change Password-->
+    <string name="change_password_title">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm New Password</string>
+    <string name="please_enter_current_pass">Please enter current password</string>
+    <string name="please_enter_new_pass">Please enter new password</string>
+    <string name="please_enter_confirm_pass">Please enter confirmation password</string>
+    <string name="different_passwords">Password doesn\'t match</string>
+    <string name="commision">Service charge</string>
+    <string name="request_cancel">You have cancelled the request</string>
+    <string name="new_password_validation">New password should not be same as old password.</string>
+    <string name="note">Note : Please enter the otp send to your registered email address</string>
+    <!-- Activity ForgetPassword -->
+    <string name="recover_password">Enter your mail ID for recovery</string>
+    <string name="otp_validation">Enter OTP field is required</string>
+    <string name="inncorrect_otp">Incorrect OTP</string>
+    <string name="confirm_password_validation">Password mismatch</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="next_btn">Next</string>
+
+    <!--Activity Email -->
+    <string name="whats_your_mail_address">What\'s your email address?</string>
+
+
+    <!--Activity Password -->
+    <string name="welcome_back">Welcome back, sign in to continue </string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="i_forgot_my_password">I forgot my password</string>
+    <string name="i_need_to_create_an_account">I need to create an account</string>
+    <string name="apply">APPLY</string>
+    <string name="secrete_code">Enter OTP</string>
+
+    <!--Your Trips-->
+    <string name="history">History</string>
+    <string name="comments">Comments</string>
+    <string name="no_trips">You have no past sittings</string>
+    <string name="no_upcoming_trips">You have no upcoming sittings</string>
+    <string name="your_trips">Your Sittings</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="past">Past</string>
+
+    <!-- Waiting for provider -->
+    <string name="looking_for_ride">Finding &Service;....</string>
+    <string name="cancel_ride">Cancel </string>
+    <string name="share">Share</string>
+    <string name="cancel_ride_alert">Are you sure want to cancel the &service;?</string>
+    <string name="no_providers_found">No one found at the moment to take your &service;, Please try after sometime</string>
+    <string name="no_drivers_found">No Nanny available to take your location</string>
+    <string name="driver_busy">Your nanny was cancelled by the driver.Please contact us for support</string>
+    <string name="retry">Retry Now</string>
+    <string name="try_later">Later</string>
+
+    <!--Invoice -->
+    <string name="invoice">Invoice</string>
+    <string name="base_price">Total amount</string>
+    <string name="booking_id">Booking ID</string>
+    <string name="sample_base_price" translatable="false">0</string>
+    <string name="sample_distance" translatable="false">1 KM</string>
+    <string name="sample_time_travel" translatable="false">1 hr</string>
+    <string name="extra_price">Extra</string>
+    <string name="tax">Tax</string>
+    <string name="wallet_detection">Wallet Detection</string>
+    <string name="discount_detection">Discount Applied</string>
+    <string name="total">Total</string>
+    <string name="pay_now">Pay Now</string>
+    <string name="distance_price">Distance amount</string>
+
+    <string name="distance_travelled">Distance Travelled</string>
+
+
+    <!--Payment Fragment-->
+    <string name="payment">Payment</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="add_payments">Add Card for payments</string>
+    <string name="card_details">Card Details</string>
+    <string name="card_number">Credit/Debit Card Number</string>
+    <string name="sample_card_no" translatable="false">XXXX - XXXX - XXXX - XXXX</string>
+    <string name="month_and_year" translatable="false">MM/YY</string>
+    <string name="cvv">CVV</string>
+    <string name="add">Add Card</string>
+
+    <string name="are_you_sure">Are you sure want to remove?</string>
+    <string name="emaergeny_call">Are you sure want to proceed with Emergency call?</string>
+
+    <!--Driver Accepted-->
+    <string name="sample_name">Will Smith</string>
+    <string name="sample_service">BMW</string>
+    <string name="call_btn">Call</string>
+    <string name="cancel_trip">Cancel</string>
+    <string name="surge_pricing">Due to peak hours, charges will be vary based on availability of providers</string>
+    <string name="pickup_drop">Please enter both pickup and drop locations</string>
+
+
+    <!--Schedule Layout -->
+    <string name="schedule">Schedule a &Service;</string>
+    <string name="change_date">Change</string>
+    <string name="sample_date">Choose a date</string>
+    <string name="sample_time">Choose a time</string>
+    <string name="next">Schedule Request</string>
+    <string name="different_time">You can\'t schedule in past timings, please choose different time</string>
+    <string name="choose_date_time">Please choose date and time for schedule</string>
+    <string name="upcoming_trips">Upcoming </string>
+    <string name="past_trips">Past </string>
+    <string name="profile">Profile</string>
+    <string name="user_no_mobile">No mobile number</string>
+    <string name="no_comments">No comment available</string>
+    <string name="view_invoice">View receipt</string>
+    <string name="submit">Submit</string>
+
+
+    <!--Activity Help-->
+    <string name="help_msg">Our team person contact\n you soon!</string>
+    <string name="help_title">&appNameCaps; Help</string>
+    <string name="schedule_request">Schedule</string>
+    <string name="surge_pricing_title">Due to high demand price may vary</string>
+    <string name="request_now">Ride now</string>
+    <string name="book_name">Booking ID</string>
+    <string name="sorry_for_inconvinent">Sorry for inconvenient,Our assisants are busy right now</string>
+    <string name="ok">Ok</string>
+    <string name="use_wallet_amount">Use wallet amount</string>
+    <string name="arriving">&Provider; accepted your request.</string>
+
+    <string name="payment_set_as_card">Payment mode changed to card</string>
+    <string name="payment_set_as_cash">Payment mode changed to cash</string>
+    <string name="walletHistory">Wallet history</string>
+    <string name="couponHistory">Coupon history</string>
+    <string name="passbook">Passbook</string>
+
+    <string name="no_wallet_history">No wallet history available!</string>
+    <string name="no_coupon_history">No coupon history available!</string>
+    <string name="new_version_available">New version available</string>
+    <string name="update_to_continue">Please, update app to new version.</string>
+    <string name="update">Update</string>
+    <string name="no_thanks">No, thanks</string>
+    <string name="add_amount">ADD AMOUNT</string>
+    <string name="enter_the_amount">Enter the amount</string>
+    <string name="amount_alert">Please enter the amount</string>
+    <string name="add_money_to_wallet">ADD MONEY TO THE WALLET</string>
+    <string name="version">Version</string>
+    <string name="change">Change</string>
+    <string name="selected_payment_mode">CARD</string>
+    <string name="add_money_using">Add money using</string>
+    <string name="add_money">Add Money</string>
+
+    <!--Rate provider-->
+    <string name="rate_provider">Rate your nanny with</string>
+    <string name="write_your_comment">Write your comment</string>
+
+    <string name="eta_time">ETA</string>
+    <string name="approximate">Estimated Fare</string>
+</resources>

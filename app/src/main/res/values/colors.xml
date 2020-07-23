@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#007bff</color>
+    <color name="colorPrimaryDark">#03377C</color>
+    <color name="colorAccent">#142149</color>
+
+
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dim_black">#1A1A1A</color>
+    <color name="dim_gray">#696969</color>
+    <color name="gray">#808080</color>
+    <color name="dark_gray">#A9A9A9</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="colorPrimary_low_opacity">#22007BFF</color>
+
+
+    <color name="bg_1">#459119</color>
+    <color name="bg_2">#044405</color>
+
+    <color name="text_color_white">#ffffff</color>
+    <color name="black_text_color">#df000000</color>
+    <color name="cancel_ride_color">#B0B0B0</color>
+    <color name="text_color_black">#df000000</color>
+    <color name="transparent_white">#99FFFFFF</color>
+    <color name="button_text_color">#ffffff</color>
+    <color name="view_bg">#1A1A1A</color>
+    <color name="view_grey_bg">#d2d2d2</color>
+    <color name="surge_txt_color">#2a8dc7</color>
+    <color name="surge_txt_bg">#999999</color>
+</resources>

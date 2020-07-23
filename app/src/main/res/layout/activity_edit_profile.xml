@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.EditProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:layout_height="200dp">
+
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:id="@+id/user_image"
+        android:src="@drawable/user_profile">
+
+    </de.hdodenhof.circleimageview.CircleImageView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_image">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+
+            android:layout_height="wrap_content">
+
+            <com.instantnannies.user.CustomFont.CustomBoldTextView
+                android:layout_width="wrap_content"
+                android:text="@string/profile_info"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/dim_black"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomBoldTextView>
+
+            <com.instantnannies.user.CustomFont.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="@string/update_your_info"
+                android:textSize="16sp"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomTextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="wrap_content">
+
+                <com.instantnannies.user.CustomFont.CustomEditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:hint="@string/first_name"
+                    android:id="@+id/first_name"
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionNext"
+                    android:nextFocusRight="@id/last_name"
+                    android:layout_height="wrap_content">
+
+                </com.instantnannies.user.CustomFont.CustomEditText>
+
+                <com.instantnannies.user.CustomFont.CustomEditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/last_name"
+                    android:hint="@string/last_name"
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@id/email"
+                    android:layout_height="wrap_content">
+
+                </com.instantnannies.user.CustomFont.CustomEditText>
+
+            </LinearLayout>
+
+            <com.instantnannies.user.CustomFont.CustomEditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:hint="@string/email"
+                android:id="@+id/email"
+                android:enabled="false"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:nextFocusDown="@id/et_phone"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomEditText>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="wrap_content">
+
+
+
+                <com.instantnannies.user.CustomFont.CustomEditText
+                    android:layout_width="match_parent"
+                    android:hint="@string/phone_number"
+                    android:id="@+id/et_phone"
+                    android:inputType="phone"
+                    android:imeOptions="actionNext"
+                    android:nextFocusDown="@id/password"
+                    android:layout_height="wrap_content">
+
+                </com.instantnannies.user.CustomFont.CustomEditText>
+            </LinearLayout>
+            <com.jaredrummler.materialspinner.MaterialSpinner
+                android:id="@+id/spinner_no_of_childs"
+                android:layout_marginLeft="-5dp"
+                android:layout_width="match_parent"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/circularstd_book"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/gray"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_height="1dp">
+
+            </View>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/childs_rv"
+                    android:visibility="gone"
+                    android:background="@color/white"
+                    android:layout_height="wrap_content">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+            <com.instantnannies.user.CustomFont.CustomButton
+                android:layout_width="match_parent"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:text="@string/update_profile"
+                android:textColor="@color/white"
+                android:id="@+id/btn_update_profile"
+                android:background="@drawable/rounded_button_bg"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomButton>
+
+            <com.instantnannies.user.CustomFont.CustomBoldTextView
+                android:id="@+id/changePasswordTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:text="@string/change_password"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16dp"
+                android:visibility="visible"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

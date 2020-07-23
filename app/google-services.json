@@ -1,0 +1,191 @@
+{
+  "project_info": {
+    "project_number": "23053725160",
+    "firebase_url": "https://instanannies.firebaseio.com",
+    "project_id": "instanannies",
+    "storage_bucket": "instanannies.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23053725160:android:2569342948fbf12227c85d",
+        "android_client_info": {
+          "package_name": "com.hixol.instanannies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23053725160-cqu3q2oh0hgtqjue1hou0hrbcnts58ig.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hixol.instanannies",
+            "certificate_hash": "c54e650d32572f960903e67b841277c108a40ebb"
+          }
+        },
+        {
+          "client_id": "23053725160-d0t4m5ouh42jcpo03ovq4ppqlvjv0tf7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hixol.instanannies",
+            "certificate_hash": "57b31a003170a11cf6baa19fb38a77a06522898c"
+          }
+        },
+        {
+          "client_id": "23053725160-0j61s89s8r2qffrjpn4l5i17rsf1ntsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIHLMwqKZ4RfNK7ERki8CkMwj9MZZTBd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23053725160-0j61s89s8r2qffrjpn4l5i17rsf1ntsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23053725160:android:51d31d170af4da7027c85d",
+        "android_client_info": {
+          "package_name": "com.hixol.nannyapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23053725160-52p36jc1go0a8kk49oemoh0n7tegf7ui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hixol.nannyapp",
+            "certificate_hash": "c54e650d32572f960903e67b841277c108a40ebb"
+          }
+        },
+        {
+          "client_id": "23053725160-jecr5a9o2j8h1sa3j4s8c6teeah6vepp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hixol.nannyapp",
+            "certificate_hash": "57b31a003170a11cf6baa19fb38a77a06522898c"
+          }
+        },
+        {
+          "client_id": "23053725160-0j61s89s8r2qffrjpn4l5i17rsf1ntsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIHLMwqKZ4RfNK7ERki8CkMwj9MZZTBd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23053725160-0j61s89s8r2qffrjpn4l5i17rsf1ntsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23053725160:android:a4164f5e6b7323b927c85d",
+        "android_client_info": {
+          "package_name": "com.instantnannies.provider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23053725160-sgl3ne7abtuk2s3ohi6m0rb1po9p0brj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.instantnannies.provider",
+            "certificate_hash": "c54e650d32572f960903e67b841277c108a40ebb"
+          }
+        },
+        {
+          "client_id": "23053725160-ut2s49pv3crci0n8clg2qj78jobeslf9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.instantnannies.provider",
+            "certificate_hash": "57b31a003170a11cf6baa19fb38a77a06522898c"
+          }
+        },
+        {
+          "client_id": "23053725160-0j61s89s8r2qffrjpn4l5i17rsf1ntsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIHLMwqKZ4RfNK7ERki8CkMwj9MZZTBd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23053725160-0j61s89s8r2qffrjpn4l5i17rsf1ntsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23053725160:android:0a3f13079e5b480027c85d",
+        "android_client_info": {
+          "package_name": "com.instantnannies.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "23053725160-c1usho0saj400j9p3k9ohvajqt67lnv1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.instantnannies.user",
+            "certificate_hash": "c54e650d32572f960903e67b841277c108a40ebb"
+          }
+        },
+        {
+          "client_id": "23053725160-q2i5i55es7tfhdvm096q5h1f42gonimr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.instantnannies.user",
+            "certificate_hash": "57b31a003170a11cf6baa19fb38a77a06522898c"
+          }
+        },
+        {
+          "client_id": "23053725160-0j61s89s8r2qffrjpn4l5i17rsf1ntsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIHLMwqKZ4RfNK7ERki8CkMwj9MZZTBd0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "23053725160-0j61s89s8r2qffrjpn4l5i17rsf1ntsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

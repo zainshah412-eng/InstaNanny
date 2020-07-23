@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activities.CodeVerificationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="307dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/insta_nannies_logo">
+
+        </ImageView>
+
+    <com.instantnannies.user.CustomFont.CustomBoldTextView
+        android:layout_width="wrap_content"
+        android:text="@string/verification_code_header"
+        android:textSize="18sp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/dim_black"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomBoldTextView>
+
+    <com.instantnannies.user.CustomFont.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="@string/enter_code"
+        android:textSize="16sp"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomTextView>
+
+
+        <com.instantnannies.user.CustomFont.CustomEditText
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/enter_otp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:inputType="number"
+            android:id="@+id/otp"
+            android:imeOptions="actionDone"
+            android:layout_height="wrap_content">
+
+        </com.instantnannies.user.CustomFont.CustomEditText>
+
+        <com.instantnannies.user.CustomFont.CustomButton
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/verify_code"
+            android:background="@drawable/button_bg"
+            android:id="@+id/verify_code"
+            android:layout_height="wrap_content">
+
+        </com.instantnannies.user.CustomFont.CustomButton>
+    </LinearLayout>
+
+</RelativeLayout>

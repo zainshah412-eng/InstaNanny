@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Activities.AddressActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/back_arrow"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/arrow_back"
+        android:layout_height="wrap_content">
+
+    </ImageView>
+
+    <com.instantnannies.user.CustomFont.CustomSemiBoldTextView
+        android:layout_width="wrap_content"
+        android:text="@string/where_you_want_services"
+        android:textColor="@color/black"
+        android:layout_toRightOf="@+id/arrow_back"
+        android:layout_marginTop="13dp"
+        android:textSize="18sp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomSemiBoldTextView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/arrow_back"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="5dp"
+        android:id="@+id/address_cv"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:src="@drawable/dot"
+                android:id="@+id/dot"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:tint="@color/colorPrimary"
+                android:layout_height="16dp">
+
+            </ImageView>
+
+            <com.instantnannies.user.CustomFont.CustomEditText
+                android:layout_width="match_parent"
+                android:hint="Enter Your Location"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:background="@null"
+                android:layout_marginTop="15dp"
+                android:id="@+id/address"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:layout_toRightOf="@+id/dot"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomEditText>
+
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:layout_below="@+id/address_cv"
+        android:id="@+id/searchResultLV">
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/searchResultLV"
+        android:orientation="vertical">
+
+        <com.instantnannies.user.CustomFont.CustomTextView
+            android:layout_width="wrap_content"
+            android:text="Recent Locations"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:id="@+id/recent_locations_tv"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+
+        </com.instantnannies.user.CustomFont.CustomTextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

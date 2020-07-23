@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_height="wrap_content">
+
+    <com.instantnannies.user.CustomFont.CustomTextView
+        android:layout_width="wrap_content"
+        android:text="Child 1"
+        android:layout_marginLeft="15dp"
+        android:textSize="16sp"
+        android:id="@+id/child_num"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomTextView>
+
+
+    <com.instantnannies.user.CustomFont.CustomEditText
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:layout_marginRight="20dp"
+        android:inputType="number"
+        android:hint="Enter Age"
+        android:textSize="16sp"
+        android:id="@+id/age_of_child"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomEditText>
+</RelativeLayout>

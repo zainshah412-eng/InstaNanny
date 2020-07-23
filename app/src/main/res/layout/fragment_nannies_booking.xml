@@ -1,0 +1,1491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.NanniesBooking">
+
+    <LinearLayout
+        android:id="@+id/mapLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menu_icon"
+        android:layout_marginTop="20dp"
+        android:id="@+id/imgMenu"
+        android:layout_marginLeft="20dp">
+
+    </ImageView>
+    <ImageView
+        android:id="@+id/shadowBack"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:alpha=".1"
+        android:scaleType="fitXY"
+        android:src="@drawable/rect_shadow"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/back_icon"
+        android:visibility="gone" />
+    <ImageView
+        android:id="@+id/mapfocus"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/current_focus"
+        android:visibility="invisible" />
+
+
+    <!-- Location Search  -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/imgMenu"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:cardCornerRadius="5dp"
+        android:id="@+id/address_cv"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:src="@drawable/dot"
+                android:id="@+id/dot"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:tint="@color/colorPrimary"
+                android:layout_height="16dp">
+
+            </ImageView>
+
+            <com.instantnannies.user.CustomFont.CustomSemiBoldTextView
+                android:layout_width="match_parent"
+                android:text="Enter Your Location"
+                android:paddingLeft="10dp"
+                android:textSize="16sp"
+                android:background="@null"
+                android:layout_marginTop="8dp"
+                android:id="@+id/address"
+                android:maxLines="1"
+                android:layout_toRightOf="@+id/dot"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomSemiBoldTextView>
+
+            <com.instantnannies.user.CustomFont.CustomTextView
+                android:layout_width="match_parent"
+                android:text="City"
+                android:paddingLeft="10dp"
+                android:textSize="15sp"
+                android:layout_below="@+id/address"
+                android:id="@+id/city"
+                android:layout_marginBottom="8dp"
+                android:layout_toRightOf="@+id/dot"
+                android:layout_height="wrap_content">
+
+            </com.instantnannies.user.CustomFont.CustomTextView>
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <!--Waiting for providers-->
+    <RelativeLayout
+        android:id="@+id/lnrWaitingForProviders"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/shadowBack"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent_white">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="231dp"
+                android:layout_height="234dp"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="true"
+                app:lottie_fileName="looking_for_providers.json"
+                app:lottie_loop="true" />
+
+        </FrameLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/text_color_white">
+
+            <com.instantnannies.user.CustomFont.CustomBoldTextView
+                android:id="@+id/lblNoMatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/looking_for_ride"
+                android:textColor="@color/black_text_color"
+                android:textSize="13sp"
+                android:visibility="visible" />
+
+            <com.instantnannies.user.CustomFont.CustomButton
+                android:id="@+id/btnCancelRide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:text="@string/cancel_ride"
+                android:textColor="@color/button_text_color" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:layout_below="@+id/address_cv"
+        android:id="@+id/searchResultLV">
+
+    </ListView>
+
+    <!-- Source and destination name -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sourceDestLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+            <LinearLayout
+                android:id="@+id/view_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="@android:color/white"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/round"
+                    tools:ignore="ContentDescription,RtlHardcoded" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="1dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@color/light_gray" />
+
+                <ImageView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/box"
+                    tools:ignore="ContentDescription,RtlHardcoded" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="10dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/source_dest"
+                    android:scaleType="centerCrop"
+                    android:layout_alignParentLeft="true"
+                    tools:ignore="ContentDescription,RtlHardcoded" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/view_layout"
+                    android:orientation="vertical">
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/frmSource"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textSize="12dp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginStart="2dp"
+                        android:background="@color/light_gray" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/frmDest"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+    <ImageView
+        android:id="@+id/imgSos"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_above="@+id/lnrFlowInvoice"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/sos"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imgShareRide"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/lnrFlowInvoice"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/share_ride"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/lnrFlowInvoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+    <!--Service Flow-->
+    <LinearLayout
+        android:id="@+id/lnrProviderAccepted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/lnrAfterAcceptedStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:orientation="vertical"
+                android:weightSum="100"
+                android:visibility="visible">
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--TextView
+                        android:id="@+id/txt01Timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@drawable/round_black"
+                        android:gravity="center"
+                        android:text="Timer"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold" /-->
+
+                    <ImageView
+                        android:layout_width="11dp"
+                        android:layout_height="11dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/round" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/lblStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawablePadding="10dp"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="lmdlkmdnf"
+                        android:textColor="@color/black_text_color"
+                        android:textSize="14dp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/trip_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:alpha=".12"
+                    android:background="@android:color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgProvider"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:padding="5dp"
+                        android:src="@drawable/ic_dummy_user"
+                        app:civ_border_color="@color/button_text_color"
+                        app:civ_border_width="2dp" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/lblProvider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/sample_name"
+                        android:textColor="@android:color/black"
+                        android:textSize="13dp" />
+
+                    <RatingBar
+                        android:id="@+id/ratingProvider"
+                        style="?attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:progressTint="#FFCA28" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgServiceRequested"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:padding="5dp"
+                        android:src="@drawable/car_select" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/lblServiceRequested"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/sample_service"
+                        android:textColor="@android:color/black"
+                        android:textSize="13dp" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/lblModelNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:lineSpacingMultiplier="1.3"
+                        android:text=""
+                        android:textColor="@android:color/black"
+                        android:textSize="13dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.instantnannies.user.CustomFont.CustomBoldTextView
+                android:id="@+id/lblSurgePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.3"
+                android:padding="5dp"
+                android:text="@string/surge_pricing"
+                android:textSize="10dp"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/AfterAcceptButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <com.instantnannies.user.CustomFont.CustomButton
+                    android:id="@+id/btnCall"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorAccent"
+                    android:text="@string/call_btn"
+                    android:textColor="@color/button_text_color" />
+
+                <TextView
+                    android:layout_width="2sp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="2dp" />
+
+                <com.instantnannies.user.CustomFont.CustomButton
+                    android:id="@+id/btnCancelTrip"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:text="@string/cancel_trip"
+                    android:textColor="@color/button_text_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!--Invoice-->
+    <LinearLayout
+        android:id="@+id/lnrInvoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/lnrInvoiceSub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:orientation="vertical">
+
+            <com.instantnannies.user.CustomFont.CustomBoldTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:text="@string/invoice"
+                android:textColor="@color/text_color_black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/bookingIDLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/book_name"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/booking_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/distance_travelled"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblDistanceCovered"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_distance"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/time_taken"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblTimeTaken"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_time_travel"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblBasePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/extra_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblExtraPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/distance_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblDistancePrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/tax"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblTaxPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/walletDetectionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/wallet_detection"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblWalletPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/discountDetectionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/discount_detection"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblDiscountPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="start"
+                    android:text="@string/commision"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblCommision"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="@string/sample_base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/myBoldTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/total"
+                    android:textColor="@android:color/black"
+                    android:textSize="15dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblTotalPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:text="@string/sample_base_price"
+                    android:textColor="@android:color/black"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/view_bg" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgPaymentTypeInvoice"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/money_icon" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblPaymentTypeInvoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/selected_payment_mode"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblPaymentChangeInvoice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end"
+                    android:text="@string/change"
+                    android:textSize="13dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <com.instantnannies.user.CustomFont.CustomButton
+            android:id="@+id/btnPayNow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/full_rounded_button"
+            android:text="@string/pay_now"
+            android:textColor="@color/button_text_color" />
+
+        <com.instantnannies.user.CustomFont.CustomButton
+            android:id="@+id/btnPaymentDoneBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/full_rounded_button"
+            android:text="@string/done"
+            android:textColor="@color/button_text_color" />
+
+    </LinearLayout>
+
+        <!--Schedule Layout-->
+        <LinearLayout
+            android:id="@+id/ScheduleLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/schedule"
+                    android:textColor="@color/black_text_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/scheduleDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/sample_date"
+                        android:textSize="16sp" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/scheduleTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sample_time"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="#1A1A1A" />
+
+            <com.instantnannies.user.CustomFont.CustomButton
+                android:id="@+id/scheduleBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_button"
+                android:text="@string/next"
+                android:textColor="@color/button_text_color" />
+
+
+        </LinearLayout>
+
+
+        <!--Approximate Rate ...-->
+        <LinearLayout
+            android:id="@+id/lnrApproximate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.instantnannies.user.CustomFont.CustomBoldTextView
+                android:id="@+id/surgeDiscount"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/round_black"
+                android:gravity="center"
+                android:paddingTop="3dp"
+                android:text="1"
+                android:textColor="@color/surge_txt_color"
+                android:textSize="22dp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+            <com.instantnannies.user.CustomFont.CustomBoldTextView
+                android:id="@+id/surge_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/surge_txt_bg"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/surge_pricing_title"
+                android:textColor="@android:color/white"
+                android:textSize="13dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/approximate"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="13dp" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/lblApproxAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="@string/eta_time"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="13dp" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/lblEta"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="start"
+                        android:text="type"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="13dp" />
+
+                    <com.instantnannies.user.CustomFont.CustomBoldTextView
+                        android:id="@+id/lblType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/text_color_black"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/lineView"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/view_grey_bg" />
+
+                <com.instantnannies.user.CustomFont.CustomCheckBox
+                    android:id="@+id/chkWallet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/use_wallet_amount"
+                    android:textSize="13dp"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+
+                    android:orientation="horizontal">
+
+                    <com.instantnannies.user.CustomFont.CustomButton
+                        android:id="@+id/imgSchedule"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/full_rounded_button"
+                        android:text="@string/schedule_request"
+                        android:visibility="visible"
+                        android:textColor="@color/button_text_color" />
+
+                    <TextView
+                        android:layout_width="2dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2dp" />
+
+                    <com.instantnannies.user.CustomFont.CustomButton
+                        android:id="@+id/btnRequestRideConfirm"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/full_rounded_button"
+                        android:text="@string/request_now"
+                        android:textColor="@color/button_text_color" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Rate provider Layout ...-->
+        <LinearLayout
+            android:id="@+id/lnrRateProvider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <com.instantnannies.user.CustomFont.CustomBoldTextView
+                    android:id="@+id/lblProviderName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/rate_provider"
+                    android:textColor="@android:color/black"
+                    android:textSize="14dp" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgProviderRate"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_dummy_user"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+
+                <RatingBar
+                    android:id="@+id/ratingProviderRate"
+                    style="?attr/ratingBarStyleIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:stepSize="1" />
+
+                <EditText
+                    android:id="@+id/txtComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/border_stroke_black"
+                    android:gravity="start"
+                    android:hint="@string/write_your_comment"
+                    android:maxLines="3"
+                    android:minLines="3"
+                    android:padding="8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+
+            <com.instantnannies.user.CustomFont.CustomButton
+                android:id="@+id/btnSubmitReview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/rounded_button"
+                android:text="@string/submit"
+                android:textColor="@color/button_text_color" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <!-- Request Selection box ...-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/confirm_location"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/nannies_cv"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        app:cardCornerRadius="5dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:id="@+id/childs_relative_layout"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:id="@+id/image"
+                    android:layout_marginLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/baby"
+                    android:layout_height="26dp">
+
+                </ImageView>
+
+                <com.instantnannies.user.CustomFont.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:text="Childcare for 1 Child"
+                    android:paddingTop="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/image"
+                    android:textSize="16sp"
+                    android:id="@+id/nannies_desc"
+                    android:textColor="@color/black"
+                    android:paddingBottom="15dp"
+                    android:layout_height="wrap_content">
+
+                </com.instantnannies.user.CustomFont.CustomTextView>
+
+                <com.instantnannies.user.CustomFont.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:text="$80/hour"
+                    android:paddingLeft="10dp"
+                    android:layout_centerVertical="true"
+                    android:textSize="16sp"
+                    android:id="@+id/price"
+                    android:layout_marginRight="5dp"
+                    android:layout_toLeftOf="@+id/arrow_down"
+                    android:layout_height="wrap_content">
+
+                </com.instantnannies.user.CustomFont.CustomTextView>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/arrow_down"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/arrow_down"
+                    android:layout_height="wrap_content">
+
+                </ImageView>
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content">
+                <com.instantnannies.user.CustomFont.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="Date"
+                    android:textSize="14dp"
+                    android:id="@+id/tv_date"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="wrap_content">
+
+                </com.instantnannies.user.CustomFont.CustomTextView>
+                <View
+                    android:layout_width="1dp"
+                    android:background="@color/silver"
+                    android:layout_height="match_parent"></View>
+
+                <com.instantnannies.user.CustomFont.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="From"
+                    android:id="@+id/tv_from"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content">
+
+                </com.instantnannies.user.CustomFont.CustomTextView>
+                <View
+                    android:layout_width="1dp"
+                    android:background="@color/silver"
+                    android:layout_height="match_parent"></View>
+
+                <com.instantnannies.user.CustomFont.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="To"
+                    android:id="@+id/tv_to"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="wrap_content">
+
+                </com.instantnannies.user.CustomFont.CustomTextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnrFlow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_below="@+id/nannies_cv"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="visible"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="bottom"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgPaymentType"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:srcCompat="@drawable/visa" />
+
+                    <com.instantnannies.user.CustomFont.CustomTextView
+                        android:id="@+id/lblPaymentType"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:text="@string/selected_payment_mode"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <com.instantnannies.user.CustomFont.CustomTextView
+                        android:id="@+id/lblPaymentChange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="@string/change"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+    <com.instantnannies.user.CustomFont.CustomButton
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_bg"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:visibility="gone"
+        android:textSize="16dp"
+        android:id="@+id/confirm_location"
+        android:text="@string/confirm_location"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomButton>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/nannies_rv"
+        android:visibility="gone"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+
+</RelativeLayout>

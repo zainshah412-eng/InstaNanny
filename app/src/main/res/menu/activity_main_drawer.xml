@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+
+        <item
+            android:id="@+id/nav_your_bookings"
+            android:title="@string/your_bookings"
+            android:actionMenuTextColor="@color/colorAccent"
+
+            />
+
+        <item
+            android:id="@+id/nav_help"
+            android:title="@string/help"
+            android:actionMenuTextColor="@color/colorAccent"
+
+            />
+
+
+        <item
+            android:id="@+id/nav_add_card"
+            android:title="@string/add_card"
+            android:actionMenuTextColor="@color/colorAccent"
+
+            />
+
+
+
+        <item
+            android:id="@+id/nav_share"
+            android:visible="true"
+            android:title="@string/share"
+            android:actionMenuTextColor="@color/colorAccent"
+
+            />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logout"
+            android:actionMenuTextColor="@color/colorAccent"
+            />
+
+    </group>
+
+</menu>

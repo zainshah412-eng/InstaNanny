@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <View
+        android:layout_width="4dp"
+        android:background="@color/colorPrimary"
+        android:id="@+id/view_"
+        android:visibility="invisible"
+        android:layout_height="60dp">
+    </View>
+
+
+    <ImageView
+        android:layout_width="26dp"
+        android:id="@+id/image"
+        android:src="@drawable/baby"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/view_"
+        android:layout_height="26dp">
+
+    </ImageView>
+    <com.instantnannies.user.CustomFont.CustomSemiBoldTextView
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/image"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:id="@+id/nannies_desc"
+        android:layout_marginTop="5dp"
+        android:text="Childcare for 1 Child"
+        android:layout_height="wrap_content">
+    </com.instantnannies.user.CustomFont.CustomSemiBoldTextView>
+
+    <com.instantnannies.user.CustomFont.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_toRightOf="@+id/image"
+        android:layout_marginTop="3dp"
+        android:text="$80/hour"
+        android:textSize="15sp"
+        android:id="@+id/price"
+        android:layout_below="@+id/nannies_desc"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomTextView>
+
+</RelativeLayout>

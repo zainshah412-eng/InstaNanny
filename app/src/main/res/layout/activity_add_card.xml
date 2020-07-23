@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.AddCard">
+
+    <com.instantnannies.user.CustomFont.CustomSemiBoldTextView
+        android:layout_width="wrap_content"
+        android:text="@string/add_card_for_payments"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomSemiBoldTextView>
+
+
+    <com.braintreepayments.cardform.view.CardForm
+        android:id="@+id/card_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:theme="@style/NavigationDrawerStyle" />
+
+    <com.instantnannies.user.CustomFont.CustomButton
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="@string/add_card"
+        android:textColor="@color/white"
+        android:id="@+id/addCard"
+        android:background="@drawable/button_bg"
+        android:layout_height="wrap_content">
+
+    </com.instantnannies.user.CustomFont.CustomButton>
+
+</LinearLayout>
